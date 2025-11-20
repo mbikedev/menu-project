@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>East @ West Menu - Nederlandse Versie</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 0.8cm;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background: white;
+            color: #000;
+        }
+
+        .container {
+            max-width: 100%;
+            background: white;
+            margin-left: 1cm;
+            margin-right: 1cm;
+        }
+
+        .header {
+            position: relative;
+            text-align: center;
+            margin-bottom: 8px;
+            padding-bottom: 12px;
+            border-bottom: 4px double #d4af37;
+            padding-top: 10px;
+        }
+
+        .header::after {
+            content: "☪ ❖ ☪";
+            display: block;
+            text-align: center;
+            color: #d4af37;
+            font-size: 12px;
+            margin-top: 8px;
+            letter-spacing: 12px;
+        }
+
+        .header-logo {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 60px;
+            height: 60px;
+            margin-top: 10px;
+        }
+
+        .header h1 {
+            color: #1a5d3f;
+            font-size: 28px;
+            margin-bottom: 6px;
+        }
+
+        .header p {
+            color: #d4af37;
+            font-style: italic;
+            font-size: 14px;
+        }
+
+        .section {
+            margin-bottom: 12px;
+        }
+
+        .drinks-section {
+            margin-bottom: 8px;
+        }
+
+        .section-header-container {
+            margin-bottom: 10px;
+            page-break-inside: avoid;
+            page-break-after: avoid;
+        }
+
+        .section-image {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 6px 6px 0 0;
+            border: 2px solid #d4af37;
+            border-bottom: none;
+        }
+
+        .section-header {
+            background: linear-gradient(135deg, #1a5d3f 0%, #2a7d5f 100%);
+            color: white;
+            padding: 10px 18px;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 0 0 6px 6px;
+            border: 2px solid #d4af37;
+            letter-spacing: 2px;
+            position: relative;
+        }
+
+        .section-header::before {
+            content: "☪";
+            position: absolute;
+            left: 12px;
+            color: #d4af37;
+            font-size: 14px;
+        }
+
+        .section-header::after {
+            content: "☪";
+            position: absolute;
+            right: 12px;
+            color: #d4af37;
+            font-size: 14px;
+        }
+
+        .section-header.no-image {
+            border-radius: 6px;
+        }
+
+        .menu-item {
+            background: linear-gradient(to right, #fafafa 0%, #ffffff 100%);
+            border: 1px solid #d4af37;
+            border-left: 3px solid #1a5d3f;
+            border-radius: 4px;
+            padding: 8px 10px;
+            margin-bottom: 6px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            page-break-inside: avoid;
+            page-break-before: auto;
+        }
+
+        .menu-items {
+            page-break-inside: avoid;
+        }
+
+        .item-content {
+            flex: 1;
+            padding-right: 12px;
+        }
+
+        .item-name {
+            font-size: 14px;
+            font-weight: bold;
+            color: #1a5d3f;
+            margin-bottom: 3px;
+        }
+
+        .item-description {
+            font-size: 12px;
+            color: #4b5563;
+            line-height: 1.3;
+        }
+
+        .item-price {
+            font-size: 15px;
+            font-weight: bold;
+            color: #d4af37;
+            white-space: nowrap;
+        }
+
+        .dietary-icon {
+            font-size: 14px;
+            margin-right: 4px;
+        }
+
+        .subsection-title {
+            font-size: 13px;
+            font-weight: bold;
+            color: #1a5d3f;
+            margin: 8px 0 6px 0;
+            padding-left: 10px;
+            border-left: 3px solid #d4af37;
+        }
+
+        .info-box {
+            background: linear-gradient(to bottom, #f0f9f4, #ffffff);
+            border-top: 2px double #d4af37;
+            border-bottom: 2px double #d4af37;
+            border-left: 1px solid #1a5d3f;
+            border-right: 1px solid #1a5d3f;
+            padding: 8px 18px;
+            text-align: center;
+            color: #1a5d3f;
+            font-style: italic;
+            margin: 10px 0 8px 0;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            position: relative;
+            page-break-inside: avoid;
+            page-break-after: avoid;
+        }
+
+        .info-box::before {
+            content: "❖";
+            position: absolute;
+            left: 15px;
+            color: #d4af37;
+            font-size: 12px;
+        }
+
+        .info-box::after {
+            content: "❖";
+            position: absolute;
+            right: 15px;
+            color: #d4af37;
+            font-size: 12px;
+        }
+
+        .footer {
+            margin-top: 10px;
+            padding: 12px 15px;
+            background: linear-gradient(to bottom, #f9fdf9, #f0f9f4);
+            border-top: 3px double #d4af37;
+            border-bottom: 3px double #d4af37;
+            border-left: 2px solid #1a5d3f;
+            border-right: 2px solid #1a5d3f;
+            border-radius: 8px;
+            text-align: center;
+            page-break-inside: avoid;
+        }
+
+        .footer::before {
+            content: "☪ ❖ ☪";
+            display: block;
+            text-align: center;
+            color: #d4af37;
+            font-size: 14px;
+            margin-bottom: 12px;
+            letter-spacing: 12px;
+        }
+
+        .footer-logo {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 10px;
+        }
+
+        .footer-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #1a5d3f;
+            margin-bottom: 10px;
+        }
+
+        .footer-content {
+            color: #4b5563;
+            line-height: 1.5;
+            font-size: 12px;
+        }
+
+        .footer-content a {
+            color: #1a5d3f;
+            text-decoration: underline;
+        }
+
+        .footer-book-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #d4af37 0%, #f0c14b 100%);
+            color: #1a5d3f;
+            padding: 10px 32px;
+            font-size: 13px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 4px;
+            border: 2px double #1a5d3f;
+            margin-top: 15px;
+            letter-spacing: 1.5px;
+        }
+
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="https://eastatwest.com" target="_blank"><img src="logo.png" alt="East @ West Logo" class="header-logo"></a>
+            <h1>East At West<br>Restaurant</h1>
+            <p>✦ Authentieke Libanese Keuken ✦</p>
+            <p style="color: #6b7280; font-size: 13px; margin-top: 8px;">Brussel, België • 2025</p>
+        </div>
+
+        <!-- Cold Mezzes Section -->
+        <div class="section">
+            <div class="section-header-container">
+                <img src="cold-mezze.webp" alt="Koude Mezzes" class="section-image">
+                <div class="section-header">KOUDE MEZZES</div>
+            </div>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name"><span class="dietary-icon">🥬</span>Zahra</div>
+                        <div class="item-description">Gekookte bloemkool, gemarineerd in een huisgemaakte saus (tomaat, knoflook en citroen), met citroen-tahinisaus</div>
+                    </div>
+                    <div class="item-price">7,50€</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name"><span class="dietary-icon">🌱</span>Muhammara</div>
+                        <div class="item-description">Gegrilde rode paprikadip, granaatappelmelasse en walnoten</div>
+                    </div>
+                    <div class="item-price">8€</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name"><span class="dietary-icon">🌱</span>Makdous</div>
+                        <div class="item-description">Baby aubergines gevuld met walnoten en paprika, gemarineerd in olijfolie</div>
+                    </div>
+                    <div class="item-price">8€</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name"><span class="dietary-icon">🌱</span>Itch</div>
+                        <div class="item-description">Bulgur gekookt in tomatensaus met paprika, ui, peterselie en granaatappelmelasse</div>
+                    </div>
+                    <div class="item-price">7,50€</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name"><span class="dietary-icon">🌱</span>Hummus</div>
+                        <div class="item-description">Kikkererwten puree met tahini (sesamzaadpasta)</div>
+                    </div>
+                    <div class="item-price">7,50€</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name"><span class="dietary-icon">🌱</span>Moutabal</div>
+                        <div class="item-description">Gegrilde aubergine kaviaar met tahini (sesamzaadpasta)</div>
+                    </div>
+                    <div class="item-price">8€</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name"><span class="dietary-icon">🌱</span>Warak Enab</div>
+                        <div class="item-description">Gevulde wijnbladeren met rijst en kruiden, gemarineerd in olijfolie, munt en granaatappelmelasse</div>
+                    </div>
+                    <div class="item-price">7€</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name"><span class="dietary-icon">🌱</span>Moussaka</div>
+                        <div class="item-description">Aubergine, ui, kikkererwten en tomaat</div>
+                    </div>
+                    <div class="item-price">7,50€</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hot Mezzes Section -->
+        <div class="section">
+            <div class="section-header-container">
+                <img src="hot-mezze.webp" alt="Warme Mezzes" class="section-image">
+                <div class="section-header">WARME MEZZES</div>
+            </div>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name">Oosterse Aubergine</div>
+                        <div class="item-description">Gegrilde aubergine gegarneerd met gekruid gehakt, bereid met ui, tomaat en paprika</div>
+                    </div>
+                    <div class="item-price">13,50€</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name">Kippenlever</div>
+                        <div class="item-description">Kippenlever bereid met ui en speciale kruiden. Geserveerd met granaatappelsaus</div>
+                    </div>
+                    <div class="item-price">11,50€</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name"><span class="dietary-icon">🥬</span>Fatteh</div>
+                        <div class="item-description">Gekookte kikkererwten, gebakken Libanees brood, knoflook en huisgemaakte citroen-tahinisaus</div>
+                    </div>
+                    <div class="item-price">7,50€</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name"><span class="dietary-icon">🌱</span>Falafel (2 stuks)</div>
+                        <div class="item-description">Gefrituurde kikkererwtenballetjes geserveerd met tahinisaus</div>
+                    </div>
+                    <div class="item-price">4€</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name"><span class="dietary-icon">🥬</span>Gegrilde Syrische Kaas</div>
+                        <div class="item-description">Gegrilde Syrische kaas</div>
+                    </div>
+                    <div class="item-price">10€</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name">Kibbeh (2 stuks)</div>
+                        <div class="item-description">Gefrituurde bulgur kroketten gevuld met gehakt, ui en walnoten</div>
+                    </div>
+                    <div class="item-price">7€</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name">Sujuk</div>
+                        <div class="item-description">Ovengebakken Libanees brood gevuld met gekruid gehakt, tomaat en augurken</div>
+                    </div>
+                    <div class="item-price">12,50€</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name"><span class="dietary-icon">🥬</span>Arayes Kaas</div>
+                        <div class="item-description">Ovengebakken Libanees brood gevuld met Syrische kaas</div>
+                    </div>
+                    <div class="item-price">10€</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name">Toshka</div>
+                        <div class="item-description">Ovengebakken Libanees brood gevuld met gehakt en Syrische kaas</div>
+                    </div>
+                    <div class="item-price">12,50€</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name"><span class="dietary-icon">🌱</span>Batata Harra</div>
+                        <div class="item-description">Gebakken aardappelblokjes met rode paprika, koriander en knoflook</div>
+                    </div>
+                    <div class="item-price">7,50€</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name"><span class="dietary-icon">🌱</span>Foul Moudamas</div>
+                        <div class="item-description">Tuinbonen gemarineerd met citroensap, tomaten, komijn, knoflook, olijfolie en tahinisaus</div>
+                    </div>
+                    <div class="item-price">8€</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name">Chef's Mezze</div>
+                        <div class="item-description">Gegrild gehakt met champignons, ui, citroen-tahinisaus en peterselie</div>
+                    </div>
+                    <div class="item-price">13,50€</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Set Menus Section -->
+        <div class="section">
+            <div class="info-box">✦ Alle menu's zijn voor 2 personen ✦</div>
+            <div class="section-header-container">
+                <img src="set-menu.webp" alt="Ontdekkingsmenu's" class="section-image">
+                <div class="section-header">AANBIEDING VOOR 2 PERSONEN</div>
+            </div>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name">Menu East@West</div>
+                        <div class="item-description">Fattoush, Hummus, Moutabal, Zahra, Falafel, 2× Kibbeh, 2× Kabab spiesjes, 2× Chich taouk, 2× Dessert</div>
+                    </div>
+                    <div class="item-price">67,50€</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name"><span class="dietary-icon">🌱</span>Menu Vegan</div>
+                        <div class="item-description">Fattoush, Hummus, Moutabal, Moussaka, Itch, Zahra, 2× Falafel, Batata Harra, 2× Dessert</div>
+                    </div>
+                    <div class="item-price">64,50€</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name">Menu Sahten</div>
+                        <div class="item-description">Tabouleh, Hummus, Toshka, Sujuk, Kippenlever, 2× Kibbeh, 2× Spiesjes, 2× Dessert</div>
+                    </div>
+                    <div class="item-price">84€</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name"><span class="dietary-icon">🌱</span>Menu Lazeez</div>
+                        <div class="item-description">Tabouleh, Hummus, Moutabal, Muhammara, Warak Enab, Moussaka, Foul Moudamas, 2× Falafel, 2× Dessert</div>
+                    </div>
+                    <div class="item-price">65,50€</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dishes Section -->
+        <div class="section">
+            <div class="section-header-container">
+                <img src="dishes.webp" alt="Gerechten" class="section-image">
+                <div class="section-header">GERECHTEN</div>
+            </div>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name">Foodie Vlees</div>
+                        <div class="item-description">Hummus, Zahra, Kibbeh, 1× Chich taouk, 1× Kabab, Foul moudamas, Fattouch</div>
+                    </div>
+                    <div class="item-price">24€</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name"><span class="dietary-icon">🌱</span>Foodie Vegan</div>
+                        <div class="item-description">Hummus, Zahra, 2× Warak eneb, 2× Falafel, Batata harra, Foul moudamas, Fattouch</div>
+                    </div>
+                    <div class="item-price">24€</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skewers Section -->
+        <div class="section">
+            <div class="info-box">✦ Alle spiesjes worden geserveerd met knoflooksaus en augurken ✦</div>
+            <div class="section-header-container">
+                <img src="skewers.webp" alt="Spiesjes" class="section-image">
+                <div class="section-header">SPIESJES</div>
+            </div>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name">2× Shish Taouk</div>
+                        <div class="item-description">Kipspiesjes</div>
+                    </div>
+                    <div class="item-price">10€</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name">2× Kebab</div>
+                        <div class="item-description">Rundvleesspiesjes</div>
+                    </div>
+                    <div class="item-price">10€</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lunch Dishes Section -->
+        <div class="section">
+            <div class="info-box">✦ Alle gerechten worden geserveerd met Libanees brood ✦</div>
+            <div class="section-header-container">
+                <img src="lunch-dishes.webp" alt="Lunchgerechten" class="section-image">
+                <div class="section-header">LUNCHGERECHTEN</div>
+            </div>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name">Chef's Gerecht</div>
+                        <div class="item-description">1 kebab, 1 chich taouk, warak eneb, kibbeh, bloemkool, muhammara, fattouch</div>
+                    </div>
+                    <div class="item-price">23,50€</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name">Sujuk</div>
+                        <div class="item-description">Libanees brood gevuld met gehakt, tomaat, augurken + hummus, moutabal, Fattoush</div>
+                    </div>
+                    <div class="item-price">20,80€</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name">Toshka</div>
+                        <div class="item-description">Libanees brood gevuld met gehakt en Syrische kaas + hummus, moutabal, Fattoush</div>
+                    </div>
+                    <div class="item-price">20,80€</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name">Chich Taouk</div>
+                        <div class="item-description">2 kipspiesjes + hummus, itch (bulgur), fattoush, augurken, knoflooksaus</div>
+                    </div>
+                    <div class="item-price">19€</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name">Mix Grill</div>
+                        <div class="item-description">1 kebab en 1 chich taouk + hummus, itch (bulgur), fattoush</div>
+                    </div>
+                    <div class="item-price">19€</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name">Kebab</div>
+                        <div class="item-description">2 gekruide gehaktspiesjes + hummus, fattoush</div>
+                    </div>
+                    <div class="item-price">19€</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name">Mix Break</div>
+                        <div class="item-description">Hummus, itch (bulgur), kabab/chich taouk, bloemkool, fattouch</div>
+                    </div>
+                    <div class="item-price">16,50€</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name"><span class="dietary-icon">🌱</span>Falafel</div>
+                        <div class="item-description">4 stuks falafel + hummus, moutabal, Fattoush, tahinisaus, augurken</div>
+                    </div>
+                    <div class="item-price">18€</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name"><span class="dietary-icon">🌱</span>Mix Break Vegan</div>
+                        <div class="item-description">Hummus, warak eneb, itch (bulgur), bloemkool, fattouch</div>
+                    </div>
+                    <div class="item-price">14,50€</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sandwiches Section -->
+        <div class="section">
+            <div class="section-header-container">
+                <img src="sandwich.webp" alt="Sandwiches" class="section-image">
+                <div class="section-header">SANDWICH + SALADE FORMULES</div>
+            </div>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name"><span class="dietary-icon">🌱</span>Falafel Sandwich + Fattoush Salade</div>
+                        <div class="item-description">Falafel, tomaat, tahini, augurken, sla</div>
+                    </div>
+                    <div class="item-price">12,50€</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name">Chich Taouk + Fattoush Salade</div>
+                        <div class="item-description">Gegrilde kip, sla, tomaat, knoflooksaus</div>
+                    </div>
+                    <div class="item-price">12,50€</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name">Kabab + Fattoush Salade</div>
+                        <div class="item-description">Gehakt, hummus, tomaat, sla, ui</div>
+                    </div>
+                    <div class="item-price">12,50€</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Salads Section -->
+        <div class="section">
+            <div class="section-header-container">
+                <img src="salads.webp" alt="Salades" class="section-image">
+                <div class="section-header">SALADES</div>
+            </div>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name"><span class="dietary-icon">🌱</span>Originele Tabouleh</div>
+                        <div class="item-description">Peterselie, tomaat, ui, citroen, bulgur, munt</div>
+                    </div>
+                    <div class="item-price">8€</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name"><span class="dietary-icon">🌱</span>Fattoush</div>
+                        <div class="item-description">Tomaat, sla, rode kool, radijs, komkommer, ui</div>
+                    </div>
+                    <div class="item-price">8€</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name"><span class="dietary-icon">🌱</span>Falafel Salade</div>
+                        <div class="item-description">Falafel, sla, komkommer, tomaat, augurken, tahini</div>
+                    </div>
+                    <div class="item-price">13,50€</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DRANKEN Title Separator -->
+        <div style="text-align: center; margin: 20px 0 15px 0;">
+            <h2 style="color: #1a5d3f; font-size: 24px; font-weight: bold; letter-spacing: 3px; border-top: 3px double #d4af37; border-bottom: 3px double #d4af37; padding: 15px 0; background: linear-gradient(to bottom, #f9fdf9, #f0f9f4);">DRANKEN</h2>
+        </div>
+
+        <!-- Beers Section -->
+        <div class="drinks-section">
+            <div class="section-header-container">
+                <div class="section-header no-image">BIEREN 🍺</div>
+            </div>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name">Libanees bier</div>
+                    </div>
+                    <div class="item-price">5€</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name">Jupiler bier</div>
+                    </div>
+                    <div class="item-price">3,50€</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name">Hoegaarden blond 25cl</div>
+                    </div>
+                    <div class="item-price">5€</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name">Leffe bruin bier 33cl</div>
+                    </div>
+                    <div class="item-price">5€</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name">Leffe blond bier 33cl</div>
+                    </div>
+                    <div class="item-price">5€</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name">Leffe 33cl (alcoholvrij)</div>
+                    </div>
+                    <div class="item-price">5€</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name">Kriekbier</div>
+                    </div>
+                    <div class="item-price">5€</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lebanese Wine Section -->
+        <div class="drinks-section">
+            <div class="section-header-container">
+                <div class="section-header no-image">LIBANESE WIJN ROOD 🍷</div>
+            </div>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name">Le Prieuré</div>
+                    </div>
+                    <div class="item-price">29€/fles</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name">Reserve du couvent</div>
+                    </div>
+                    <div class="item-price">33€/fles</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name">Bretéche fles</div>
+                    </div>
+                    <div class="item-price">36€/fles</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name">Glas Libanese wijn</div>
+                    </div>
+                    <div class="item-price">6€</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lebanese White Wine Section -->
+        <div class="drinks-section">
+            <div class="section-header-container">
+                <div class="section-header no-image">LIBANESE WIJN WIT 🥂</div>
+            </div>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name">Blanc de l'observatoire</div>
+                    </div>
+                    <div class="item-price">29€/fles</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name">Blanc de Blancs</div>
+                    </div>
+                    <div class="item-price">36€/fles</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name">Bretéche</div>
+                    </div>
+                    <div class="item-price">36€/fles</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name">Glas Libanese wijn</div>
+                    </div>
+                    <div class="item-price">6€</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lebanese Rosé Wine Section -->
+        <div class="drinks-section">
+            <div class="section-header-container">
+                <div class="section-header no-image">LIBANESE WIJN ROSÉ 🌸</div>
+            </div>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name">Chateau Ksara Rosé</div>
+                    </div>
+                    <div class="item-price">30€/fles</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cocktails Section -->
+        <div class="drinks-section">
+            <div class="section-header-container">
+                <div class="section-header no-image">COCKTAILS 🍹</div>
+            </div>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name">Magic of Damascus</div>
+                        <div class="item-description">Huisgemaakte Damascusroos sap, rum en tonic</div>
+                    </div>
+                    <div class="item-price">9€</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name">Lemon mirage</div>
+                        <div class="item-description">Huisgemaakte citroensap, gin en tonic</div>
+                    </div>
+                    <div class="item-price">9€</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name">Arak</div>
+                    </div>
+                    <div class="item-price">6€/Glas</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Soft Drinks Section -->
+        <div class="drinks-section">
+            <div class="section-header-container">
+                <div class="section-header no-image">FRISDRANKEN 🥤</div>
+            </div>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name">Huisgemaakt "Damascusroos"</div>
+                    </div>
+                    <div class="item-price">5€</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name">Huisgemaakte citroensap</div>
+                    </div>
+                    <div class="item-price">5€</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name">Huisgemaakte ijsthee</div>
+                    </div>
+                    <div class="item-price">4€</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name">Schweppes (Agrumes / Virgin Mojito)</div>
+                    </div>
+                    <div class="item-price">4€</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name">Schweppes (Indian Tonic)</div>
+                    </div>
+                    <div class="item-price">4€</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name">Water plat/bruisend 0.5L</div>
+                    </div>
+                    <div class="item-price">4€</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name">Coca-Cola / Coca Zero / Sprite</div>
+                    </div>
+                    <div class="item-price">3,50€</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name">Fanta Orange</div>
+                    </div>
+                    <div class="item-price">3,50€</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name">Ayran</div>
+                    </div>
+                    <div class="item-price">3,50€</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hot Drinks Section -->
+        <div class="drinks-section">
+            <div class="section-header-container">
+                <div class="section-header no-image">WARME DRANKEN ☕</div>
+            </div>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name">Arabische Koffie</div>
+                    </div>
+                    <div class="item-price">4€</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name">Thee (Muntthee / Zwarte Thee / Kamille)</div>
+                    </div>
+                    <div class="item-price">3,50€</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name">Café / Espresso</div>
+                    </div>
+                    <div class="item-price">3,50€</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Desserts Section -->
+        <div class="drinks-section">
+            <div class="section-header-container">
+                <div class="section-header no-image">DESSERTS 🍰</div>
+            </div>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name"><span class="dietary-icon">🌱</span>Aish el Saraya (Vgn)</div>
+                        <div class="item-description">Een laag gezoet biscuit, een laag vegan pudding, sinaasappelbloesemwater en pistache</div>
+                    </div>
+                    <div class="item-price">3,50€</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name"><span class="dietary-icon">🌱</span>Halve (Vegan)</div>
+                        <div class="item-description">Sesampasta en pistache</div>
+                    </div>
+                    <div class="item-price">3,50€</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name">Baklava</div>
+                    </div>
+                    <div class="item-price">6€</div>
+                </div>
+                <div class="menu-item">
+                    <div class="item-content">
+                        <div class="item-name">Huisgemaakt Traditioneel IJs</div>
+                        <div class="item-description">Bevroren zuivelijs gegarneerd met pistache</div>
+                    </div>
+                    <div class="item-price">9€</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Section -->
+        <div class="footer">
+            <a href="https://eastatwest.com" target="_blank"><img src="logo.png" alt="East @ West Logo" class="footer-logo"></a>
+            <div class="footer-title">EAST AT WEST<br>Restaurant</div>
+            <div class="footer-content">
+                Keizerslaan 26<br>
+                1000 Brussel<br>
+                België<br>
+                <br>
+                +32 465 20 60 24<br>
+                <a href="mailto:contact@eastatwest.com">contact@eastatwest.com</a><br>
+                <br>
+                2025
+            </div>
+            <div>
+                <a href="https://eastatwest.com/reservations" target="_blank" class="footer-book-btn">RESERVEER EEN TAFEL</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Auto-print when page loads
+        window.onload = function() {
+            // Give time for images to load
+            setTimeout(function() {
+                //window.print();
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
