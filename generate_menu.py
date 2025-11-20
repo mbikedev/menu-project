@@ -379,7 +379,7 @@ class MenuPDFGenerator:
             alignment=TA_CENTER,
             fontName='Helvetica-Bold'
         )
-        button = Paragraph("BOOK A TABLE", button_style)
+        button = Paragraph('<link href="https://eastatwest.com/reservations">BOOK A TABLE</link>', button_style)
         
         button_table = Table([[button]], colWidths=[2.5*inch])
         button_table.setStyle(TableStyle([
@@ -524,7 +524,26 @@ def main():
     ]
     
     pdf.add_section("Salads", salads)
-    
+
+    # DESSERTS
+    desserts = [
+        {"name": "Aish el Saraya (Vgn)", "description": "A layer of sweetened biscuit, a layer of vegan pudding, orange blossom water and pistachio", "price": "3,50€", "is_vegan": True},
+        {"name": "Halve (Vegan)", "description": "Sesame paste and pistachio", "price": "3,50€", "is_vegan": True},
+        {"name": "Baklava", "description": "Traditional Lebanese pastry", "price": "6€"},
+        {"name": "Homemade Traditional Ice Cream", "description": "Frozen dairy ice cream dressed with pistachio", "price": "9€"}
+    ]
+
+    pdf.add_section("Desserts", desserts)
+
+    # EXTRAS
+    extras = [
+        {"name": "4× Extra Bread Pieces", "description": "Additional Lebanese bread pieces", "price": "1€", "is_vegan": True},
+        {"name": "Extra Garlic Sauce", "description": "Homemade garlic sauce", "price": "2€", "is_vegetarian": True},
+        {"name": "Extra Spicy Pepper Sauce", "description": "Homemade spicy pepper sauce", "price": "2€", "is_vegan": True}
+    ]
+
+    pdf.add_section("Extras", extras)
+
     # Add contact page with logo in footer
     pdf.add_contact_page(logo_path)
     
